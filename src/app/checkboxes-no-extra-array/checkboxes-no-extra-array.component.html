@@ -1,0 +1,25 @@
+<mat-accordion displayMode="flat" multi>
+    <mat-expansion-panel [expanded]="true">
+        <mat-expansion-panel-header>
+            <mat-panel-title> Brand </mat-panel-title>
+        </mat-expansion-panel-header>
+        <section>
+            <form [formGroup]="form">
+                <mat-checkbox [checked]="allChecked()" [indeterminate]="someChecked()" (change)="setAll()"
+                    color="primary">
+                    All
+                </mat-checkbox>
+
+                <p *ngFor="let checkbox of allFilters">
+                    <mat-checkbox value="checkbox" (change)="addCheckboxNameToCheckedFilters(checkbox)"
+                        [checked]="brandsValueContains(checkbox)" color="primary">{{checkbox}}</mat-checkbox>
+                </p>
+            </form>
+        </section>
+
+        <section>
+            <h4>You chose:</h4>
+            {{form.value | json}}
+        </section>
+    </mat-expansion-panel>
+</mat-accordion>
