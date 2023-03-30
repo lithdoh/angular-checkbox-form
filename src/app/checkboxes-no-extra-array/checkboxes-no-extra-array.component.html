@@ -11,7 +11,7 @@
                 </mat-checkbox>
 
                 <p *ngFor="let checkbox of allFilters">
-                    <mat-checkbox value="checkbox" (change)="addCheckboxNameToCheckedFilters(checkbox)"
+                    <mat-checkbox value="checkbox" (change)="addCheckboxNameToFormControl(checkbox)"
                         [checked]="brandsValueContains(checkbox)" color="primary">{{checkbox}}</mat-checkbox>
                 </p>
             </form>

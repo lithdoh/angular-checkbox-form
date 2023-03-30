@@ -7,6 +7,7 @@ import { FormBuilder, FormControl } from '@angular/forms';
   styleUrls: ['./checkboxes-no-extra-array.component.css']
 })
 export class CheckboxesNoExtraArrayComponent {
+
   allFilters: string[] = ["Pepperoni", "Extra Cheese", "Mushroom"];
   checkedFilters: string[] = [];
 
@@ -18,7 +19,7 @@ export class CheckboxesNoExtraArrayComponent {
 
   brands = this.form.get('brands') as FormControl;
 
-  addCheckboxNameToCheckedFilters(name: string): void {
+  addCheckboxNameToFormControl(name: string): void {
     const index = this.brands.value.indexOf(name);
 
     if (index > -1) {
