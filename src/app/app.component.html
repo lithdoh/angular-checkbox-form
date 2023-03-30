@@ -329,7 +329,10 @@
 
   <app-checkboxes></app-checkboxes>
   <app-checkboxes-no-extra-array></app-checkboxes-no-extra-array>
-
+  <ng-container *ngIf="api.stems$ | async; let stems">
+    <app-checkboxes-all-categories [data]="stems"></app-checkboxes-all-categories>
+  </ng-container>
+  
 </div>
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
